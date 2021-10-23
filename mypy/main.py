@@ -486,6 +486,10 @@ def process_options(args: List[str],
         help="Show program's version number and exit",
         stdout=stdout)
 
+    general_group.add_argument(
+        '--write-baseline', action="store_true",
+        help="Create an error baseline from the result of this execution")
+
     config_group = parser.add_argument_group(
         title='Config file',
         description="Use a config file instead of command line arguments. "

@@ -54,6 +54,7 @@ PER_MODULE_OPTIONS: Final = {
     "warn_unreachable",
     "warn_no_ignore_code",
     "warn_unused_ignores",
+    "write_baseline",
 }
 
 OPTIONS_AFFECTING_CACHE: Final = (PER_MODULE_OPTIONS | {"platform", "bazel", "plugins"}) - {
@@ -102,6 +103,8 @@ class Options:
         self.explicit_package_bases = False
         # File names, directory names or subpaths to avoid checking
         self.exclude: List[str] = []
+
+        self.write_baseline = False
 
         # disallow_any options
         self.disallow_any_generics = True
